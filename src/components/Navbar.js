@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import github from '../img/github-icon.svg';
 import logo from '../img/brand-logo.png';
 
 const Navbar = (props) => {
-  const [active, setActive] = useState(false);
+  const [, setActive] = useState(false);
   const [navBarActiveClass, setNavBarActiveClass] = useState('');
 
   const toggleHamburger = () => {
@@ -16,7 +15,7 @@ const Navbar = (props) => {
 
   return (
     <nav
-      className="navbar is-transparent flex-space-between"
+      className="navbar is-fixed-top"
       role="navigation"
       aria-label="main-navigation"
     >
@@ -37,17 +36,33 @@ const Navbar = (props) => {
           </div>
         </div>
         <div id="navMenu" className={`navbar-menu ${navBarActiveClass}`}>
-          <div className="navbar-start has-text-centered">
-            <Link className="navbar-item" activeClassName="active-navbar-item" to="/blog">
+          <div className="navbar-end has-text-centered">
+            <Link
+              className="navbar-item"
+              activeClassName="active-navbar-item"
+              to="/blog"
+            >
               Blog
             </Link>
-            <Link className="navbar-item" activeClassName="active-navbar-item" to="/contact">
+            <Link
+              className="navbar-item"
+              activeClassName="active-navbar-item"
+              to="/resources"
+            >
               Resources
             </Link>
-            <Link className="navbar-item" activeClassName="active-navbar-item" to="/contact">
-              Business Software
+            <Link
+              className="navbar-item"
+              activeClassName="active-navbar-item"
+              to="/softwares"
+            >
+              Business Softwares
             </Link>
-            <Link className="navbar-item" activeClassName="active-navbar-item" to="/about">
+            <Link
+              className="navbar-item"
+              activeClassName="active-navbar-item"
+              to="/about"
+            >
               About
             </Link>
           </div>
