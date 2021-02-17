@@ -32,7 +32,7 @@ export const ResourcesPageTemplate = ({ title, description, courses }) => (
           <div className="column is-10 is-offset-1">
             <Accordion allowZeroExpanded>
               {courses.map((course, index) => (
-                <AccordionItem key={index} className="pb-4 mb-2">
+                <AccordionItem key={index} className="pb-4">
                   <AccordionItemHeading>
                     <AccordionItemButton>{course.title}</AccordionItemButton>
                   </AccordionItemHeading>

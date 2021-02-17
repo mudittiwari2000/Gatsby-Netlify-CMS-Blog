@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
 
+import '../components/all.scss';
 import styles from './index-page.module.scss';
 
 export const IndexPageTemplate = ({ title, intro }) => {
