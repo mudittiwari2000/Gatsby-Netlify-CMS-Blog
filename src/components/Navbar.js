@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import logo from '../img/brand-logo.png';
 
+import './all.scss';
+
 const Navbar = (props) => {
   const [, setActive] = useState(false);
   const [navBarActiveClass, setNavBarActiveClass] = useState('');
@@ -21,7 +23,7 @@ const Navbar = (props) => {
     >
       <div className="container">
         <div className="navbar-brand">
-          <Link to="/" className="navbar-item" title="Logo">
+          <Link to="/" className="navbar-item brand" title="Logo">
             <img src={logo} alt="Kaldi" style={{ width: '12em' }} />
           </Link>
           {/* Hamburger menu */}
@@ -40,16 +42,16 @@ const Navbar = (props) => {
             <Link
               className="navbar-item"
               activeClassName="active-navbar-item"
-              to="/blog"
+              to="/"
             >
-              Blog
+              Home
             </Link>
             <Link
               className="navbar-item"
               activeClassName="active-navbar-item"
-              to="/resources"
+              to="/blog"
             >
-              Resources
+              News &amp; blogs
             </Link>
             <Link
               className="navbar-item"
@@ -61,9 +63,9 @@ const Navbar = (props) => {
             <Link
               className="navbar-item"
               activeClassName="active-navbar-item"
-              to="/about"
+              to="/resources"
             >
-              About
+              Resources
             </Link>
           </div>
         </div>
