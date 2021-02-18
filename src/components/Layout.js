@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { withPrefix } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import useSiteMetadata from './SiteMetadata';
+
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import './all.scss';
-import useSiteMetadata from './SiteMetadata';
-import { withPrefix } from 'gatsby';
+import BackToTop from '../components/BackToTop';
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata();
+import './all.scss';
+
+const TemplateWrapper = ({ children, title = '' }) => {
+  const { title: siteTitle, description } = useSiteMetadata();
+  const [pageY, setPageY] = useState('');
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      setPageY(window.scrollY);
+    };
+
+    document.addEventListener('scroll', handleScroll);
+
+    return () => document.removeEventListener('scroll', handleScroll);
+  });
+
   return (
     <div>
       <Helmet>
         <html lang="en" />
-        <title>{title}</title>
+        <title>{title ? title + ' | Trendlance' : siteTitle} </title>
         <meta name="description" content={description} />
 
         <link
@@ -48,9 +63,10 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
+      <Navbar isActive={pageY > 10 ? 'active' : ''} />
       <div className="pt-6">{children}</div>
       <Footer />
+      <BackToTop isHidden={pageY > 10 ? '' : 'hidden'} />
     </div>
   );
 };

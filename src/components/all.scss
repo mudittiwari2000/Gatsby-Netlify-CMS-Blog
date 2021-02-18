@@ -2,9 +2,51 @@
 @import "~bulma";
 @import "../styles/variables";
 
+:root {
+  font-size: 16px;
+
+  @media (min-width: 600px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 780px) {
+    font-size: 13px;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 15px;
+  }
+}
+
 .navbar {
   position: sticky;
-  box-shadow: 2px 0 6px rgba($color: #555, $alpha: .25);
+
+  .spacing-top,
+  .spacing-bottom {
+    display: block;
+    height: 6vh;
+    width: .5em;
+    transform: scale(1.25);
+    transition: transform 450ms ease-out 100ms;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &.active {
+    box-shadow: 2px 0 6px rgba($color: #555, $alpha: .25);
+
+    .spacing-top,
+    .spacing-bottom {
+      transform: scale(1);
+      transition: transform 450ms ease-out 100ms;
+    }
+  }
 }
 
 
@@ -16,7 +58,7 @@
   font-weight: 500;
   font-size: 1.075rem;
   position: relative;
-  transition: color 300ms ease-out, transform 300ms ease-out;
+  transition: color 300ms ease-out, transform 300ms ease-out 100ms;
   z-index: 1;
 
   &:not(.brand)::before {
@@ -30,7 +72,7 @@
     transform-origin: right;
     background-color: $primary;
     overflow: hidden;
-    transition: color 300ms ease-out, transform 300ms ease-out;
+    transition: color 300ms ease-out, transform 300ms ease-out 100ms;
     z-index: -1;
   }
 
@@ -241,23 +283,50 @@ $menu-label-color: $white-ter;
   }
 }
 
-.email-container {
-  min-height: 100vh;
+// Hero Section
+.hero-container {
+  // min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: .75em;
 
+  &__main {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+    }
+  }
+
   &__title {
-    margin-bottom: 1.75em;
+    margin-bottom: .5em !important;
   }
 
   &__subtitle {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5em !important;
   }
 }
 
 .control input,
 .button {
   font-size: 1.25rem;
+}
+
+.btn-back-to-top {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  border-radius: .35em;
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+
+  &.hidden {
+    opacity: 0;
+  }
 }

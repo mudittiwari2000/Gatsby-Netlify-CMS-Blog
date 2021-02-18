@@ -42,7 +42,7 @@ const SoftwarePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout title="Software">
       <SoftwaresPageTemplate
         title={frontmatter.title}
         description={frontmatter.description}

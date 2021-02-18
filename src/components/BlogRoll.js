@@ -27,7 +27,7 @@ const BlogRoll = ({ data }) => {
               <p className="blog-container__genre is-size-5 has-text-weight-semibold">
                 {genre + ' '}
               </p>
-              <p className="blog-container__text is-size-5 has-text-weight-medium">
+              <p className="blog-container__text is-size-5 has-text-weight-semibold">
                 {post.excerpt}
               </p>
             </div>

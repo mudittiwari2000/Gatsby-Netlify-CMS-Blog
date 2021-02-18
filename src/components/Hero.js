@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 
-import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import Typed from 'react-typed';
 
+import logo from '../img/hero.svg';
 import '../components/all.scss';
 
-const Email = () => {
+const Hero = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
 
   const handleNameField = (e) => {
     setName(e.target.value);
   };
+
   const handleEmailField = (e) => {
     setEmail(e.target.value);
-  };
-  const handleMessageField = (e) => {
-    setMessage(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -25,14 +23,24 @@ const Email = () => {
   };
 
   return (
-    <div className="container mt-4 email-container">
-      <div className="columns">
+    <div className="container mt-4 hero-container">
+      <div className="hero-container__main">
+        <img src={logo} alt="Hero Illustration" width={300} />
+        <Typed
+          strings={['Trendlance', 'Blog', 'Lorem']}
+          typeSpeed={25}
+          loop={true}
+          className="has-text-primary title is-size-1 has-text-weight-bold has-text-centered "
+          style={{ fontSize: '4rem' }}
+        />
+      </div>
+      <div className="columns mt-4">
         <div className="column is-10 is-offset-1">
           <div className="content">
-            <h2 className="is-size-1 has-text-weight-semibold email-container__title">
+            <h2 className="is-size-1 has-text-weight-semibold hero-container__title">
               Learn How to Scale Your Influence at Startup Speed.
             </h2>
-            <p className="is-size-4 has-text-weight-light email-container__subtitle">
+            <p className="is-size-4 has-text-weight-light hero-container__subtitle">
               Join me and 500,000 monthly readers to shift from blogger to
               business owner, scale your blog like a startup, and make
               life-changing money in months, not years.
@@ -47,7 +55,14 @@ const Email = () => {
                 <div className="field-body">
                   <div className="field">
                     <p className="control is-expanded">
-                      <input className="input" type="text" placeholder="Name" />
+                      <input
+                        className="input"
+                        type="text"
+                        placeholder="Name"
+                        value={name}
+                        onChange={handleNameField}
+                        required
+                      />
                     </p>
                   </div>
                   <div className="field">
@@ -56,6 +71,9 @@ const Email = () => {
                         className="input"
                         type="email"
                         placeholder="Email"
+                        value={email}
+                        onChange={handleEmailField}
+                        required
                       />
                     </p>
                   </div>
@@ -74,4 +92,4 @@ const Email = () => {
   );
 };
 
-export default Email;
+export default Hero;

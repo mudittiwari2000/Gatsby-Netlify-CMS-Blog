@@ -34,7 +34,12 @@ module.exports = {
         name: 'images'
       }
     },
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        icon: `${__dirname}/src/img/brand-logo.png`
+      }
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',

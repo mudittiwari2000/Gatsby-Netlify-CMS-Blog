@@ -56,7 +56,7 @@ const ResourcesPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout title="Resources">
       <ResourcesPageTemplate
         title={frontmatter.title}
         heading={frontmatter.heading}

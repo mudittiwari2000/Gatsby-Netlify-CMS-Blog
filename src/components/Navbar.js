@@ -4,7 +4,7 @@ import logo from '../img/brand-logo.png';
 
 import './all.scss';
 
-const Navbar = (props) => {
+const Navbar = ({ isActive, ...props }) => {
   const [, setActive] = useState(false);
   const [navBarActiveClass, setNavBarActiveClass] = useState('');
 
@@ -17,10 +17,11 @@ const Navbar = (props) => {
 
   return (
     <nav
-      className="navbar is-fixed-top"
+      className={`navbar is-fixed-top ${isActive}`}
       role="navigation"
       aria-label="main-navigation"
     >
+      <div className="spacing-top"></div>
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item brand" title="Logo">
@@ -70,6 +71,7 @@ const Navbar = (props) => {
           </div>
         </div>
       </div>
+      <div className="spacing-bottom"></div>
     </nav>
   );
 };

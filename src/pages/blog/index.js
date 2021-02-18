@@ -6,7 +6,7 @@ import BlogRoll from '../../components/BlogRoll';
 import '../../components/all.scss';
 
 const BlogIndexPage = (props) => (
-  <Layout>
+  <Layout title="Blog">
     <div className="is-flex is-justify-content-cente mb-4r">
       <h2 className={`has-text-weight-bold is-size-1 page-title`}>
         News &amp; Blogs
