@@ -11,8 +11,8 @@ const FeatureGrid = ({ gridItems }) => (
               <img src={item.image.publicURL} style={{ height: '160px' }} />
             </div>
           </div>
-          <h3 className="is-size-4 has-text-weight-medium">{item.title}</h3>
-          <p className="mt-4">{item.text}</p>
+          <h3 className="title">{item.title}</h3>
+          <p className="subtitle">{item.text}</p>
         </section>
       </div>
     ))}

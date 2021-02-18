@@ -8,7 +8,6 @@ import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
 
 import '../components/all.scss';
-import styles from './index-page.module.scss';
 
 export const IndexPageTemplate = ({ intro }) => {
   return (
@@ -21,9 +20,7 @@ export const IndexPageTemplate = ({ intro }) => {
               <div className="column is-10 is-offset-1">
                 <div className="content">
                   <div className="column is-12">
-                    <h3
-                      className={`has-text-weight-semibold is-size-1 ${styles.titleHash}`}
-                    >
+                    <h3 className="has-text-weight-semibold is-size-1 title__styled">
                       LATEST NEWS &amp; <br /> BLOGS
                     </h3>
                     <BlogRoll />
@@ -33,9 +30,7 @@ export const IndexPageTemplate = ({ intro }) => {
                       </Link>
                     </div>
                   </div>
-                  <h3
-                    className={`has-text-weight-semibold is-size-2 ${styles.titleHash}`}
-                  >
+                  <h3 className="has-text-weight-semibold is-size-1 title__styled">
                     Business Software
                   </h3>
                   <Features gridItems={intro.blurbs} />

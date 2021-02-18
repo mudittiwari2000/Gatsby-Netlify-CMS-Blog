@@ -7,7 +7,7 @@ const BlogRoll = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
-    <div className="columns mt-4">
+    <div className="columns">
       {posts &&
         posts.map(({ node: post }) => {
           const { genre = 'Music' } = post.frontmatter;
@@ -15,7 +15,7 @@ const BlogRoll = ({ data }) => {
           return (
             <div className="blog-container column" key={post.id}>
               <Link to={post.fields.slug}>
-                <div>
+                <div className="blog-container__img-container">
                   <PreviewCompatibleImage
                     imageInfo={{
                       image: post.frontmatter.featuredimage,
@@ -27,7 +27,7 @@ const BlogRoll = ({ data }) => {
               <p className="blog-container__genre is-size-5 has-text-weight-semibold">
                 {genre + ' '}
               </p>
-              <p className="blog-container__text is-size-5 has-text-weight-semibold">
+              <p className="blog-container__text is-size-5 has-text-weight-bold">
                 {post.excerpt}
               </p>
             </div>

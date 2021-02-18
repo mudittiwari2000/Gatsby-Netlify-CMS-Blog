@@ -21,7 +21,7 @@ const TemplateWrapper = ({ children, title = '' }) => {
     document.addEventListener('scroll', handleScroll);
 
     return () => document.removeEventListener('scroll', handleScroll);
-  });
+  }, []);
 
   return (
     <div>

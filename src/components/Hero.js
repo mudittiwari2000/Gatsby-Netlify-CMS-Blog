@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import Typed from 'react-typed';
-
 import logo from '../img/hero.svg';
 import '../components/all.scss';
 
@@ -28,19 +27,19 @@ const Hero = () => {
         <img src={logo} alt="Hero Illustration" width={300} />
         <Typed
           strings={['Trendlance', 'Blog', 'Lorem']}
-          typeSpeed={25}
+          typeSpeed={50}
           loop={true}
           className="has-text-primary title is-size-1 has-text-weight-bold has-text-centered "
-          style={{ fontSize: '4rem' }}
+          style={{ fontSize: '5rem' }}
         />
       </div>
       <div className="columns mt-4">
         <div className="column is-10 is-offset-1">
-          <div className="content">
-            <h2 className="is-size-1 has-text-weight-semibold hero-container__title">
+          <div className="content gradient-bg">
+            <h2 className="has-text-white is-size-1 is-size-2-tablet is-size-3-mobile has-text-weight-semibold hero-container__title">
               Learn How to Scale Your Influence at Startup Speed.
             </h2>
-            <p className="is-size-4 has-text-weight-light hero-container__subtitle">
+            <p className="has-text-white is-size-4 is-size-5-mobile has-text-weight-light hero-container__subtitle">
               Join me and 500,000 monthly readers to shift from blogger to
               business owner, scale your blog like a startup, and make
               life-changing money in months, not years.

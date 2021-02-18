@@ -1,0 +1,52 @@
+@import "./utils/variables";
+
+.hero-container {
+  // min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: .75em;
+  margin-bottom: 2em;
+
+  &__main {
+    margin-top: 10em;
+    margin-bottom: 10em;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    margin-bottom: .5em !important;
+  }
+
+  &__subtitle {
+    margin-bottom: 1.5em !important;
+  }
+}
+
+.control input,
+.button {
+  font-size: 1.25rem;
+}
+
+.gradient-bg {
+  position: relative;
+
+  &::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: -25%;
+    left: -50vw;
+    width: 150vw;
+    height: 150%;
+    background-color: $brand-cyan;
+    background-image: linear-gradient(315deg, $brand-cyan 0%, #1e9afe 74%);
+  }
+}

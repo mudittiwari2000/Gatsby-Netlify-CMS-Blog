@@ -12,10 +12,10 @@ const BackToTop = ({ isHidden, ...props }) => {
 
   return (
     <button
-      className={`button is-primary rounded btn-back-to-top ${isHidden}`}
+      className={`button is-small-mobile is-primary rounded btn-back-to-top ${isHidden}`}
       onClick={() => handleClick()}
     >
-      <span className="icon">
+      <span className="icon is-small-mobile">
         <ChevronUpIcon />
       </span>
     </button>
